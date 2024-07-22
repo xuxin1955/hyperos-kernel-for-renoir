@@ -17,7 +17,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt update
-          sudo apt install -y clang lld build-essential bc curl git zip ftp gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi libssl-dev lftp zstd wget libfl-dev python2 python3 libarchive-tools
+          sudo apt install -y clang lld python2 llvm git make gcc flex bison bc libssl-dev ccache libncurses5-dev libncursesw5-dev libtinfo5 cmake python3
       - name: Build Project
         run: | 
           git config --global user.email "you@example.com"
