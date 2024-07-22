@@ -41,7 +41,7 @@ jobs:
           git add .
           git commit -m "Blump up KSU for NonGKI kernel"
           chmod +x ./build.sh
-          ./build.sh kernelonly
+          ./build.sh kernelonly renoir
           mv ../out/ak3/Kernel-*.zip .
           releaseFile=$(set -- Kernel-*.zip; echo "$1")
           echo "RELEASE_FILE=$releaseFile" >> $GITHUB_ENV
