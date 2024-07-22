@@ -33,7 +33,7 @@ FINAL_KERNEL_BUILD_PARA="ARCH=$TARGET_ARCH \
 TARGET_KERNEL_FILE=arch/arm64/boot/Image;
 TARGET_KERNEL_DTB=arch/arm64/boot/dtb;
 TARGET_KERNEL_DTBO=arch/arm64/boot/dtbo.img
-TARGET_KERNEL_NAME=KzeroXone-kernel-MIUI-HyperOS;
+TARGET_KERNEL_NAME=zeroXone-kernel-MIUI-HyperOS;
 TARGET_KERNEL_MOD_VERSION=$(make kernelversion)
 
 ANYKERNEL_PATH=anykernel
