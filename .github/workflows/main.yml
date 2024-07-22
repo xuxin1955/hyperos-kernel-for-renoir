@@ -1,0 +1,29 @@
+name: Build Kernel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-kernel:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    strategy:
+      max-parallel: 4
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Build kernel
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "zeroXone-github"
+          rm -rf KernelSU
+          git add .
+          git commit -m "Remove KSU folder"
+          git push origin
+          
