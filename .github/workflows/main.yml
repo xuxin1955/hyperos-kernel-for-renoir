@@ -41,7 +41,7 @@ jobs:
           git add .
           git commit -m "Blump up KSU for NonGKI kernel"
           chmod +x ./build.sh
-          ./build.sh all Renoir
+          ./build.sh all renoir
           mv ../out/ak3/Kernel-Acetaminophen-kernel.zip .
           releaseFile=$(set -- Kernel-Acetaminophen-kernel.zip; echo "$1")
           echo "RELEASE_FILE=$releaseFile" >> $GITHUB_ENV
