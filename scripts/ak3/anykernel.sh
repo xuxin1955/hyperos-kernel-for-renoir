@@ -11,7 +11,7 @@ do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=DEVICE_PLACEHOLDER
-supported.versions=13 - 14
+supported.versions=
 supported.patchlevels=
 supported.vendorpatchlevels=
 '; } # end properties
