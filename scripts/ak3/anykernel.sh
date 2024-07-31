@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=Kernel for DEVICE_PLACEHOLDER by zeroXone @ Github
+kernel.string=Kernel for DEVICE_PLACEHOLDER by llit @ Github
 do.devicecheck=0
 do.modules=0
 do.systemless=1
