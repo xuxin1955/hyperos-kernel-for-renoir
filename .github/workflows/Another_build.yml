@@ -1,4 +1,4 @@
-name: Build and Upload Artifacts
+name: Update Kernel
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Dependencies
         run: |
@@ -21,16 +21,26 @@ jobs:
       - name: Build Project
         run: | 
           git config --global user.email "you@example.com"
-          git config --global user.name "kirill1aliuk-github"
-          git submodule add https://github.com/kirilll1aliuk/KernelSU.git
+          git config --global user.name "xuxin1995-github"
+          git submodule add https://github.com/rsuntk/KernelSU.git
           git add .
           git commit -m "Blump up KSU for NonGKI kernel"
           chmod +x ./build.sh
           ./build.sh all renoir
+
+      - name: rm1
+        run: rm -rf ../out/arch/arm64/boot/dts
+      - name: rm2
+        run: rm -rf ../out/arch/arm64/boot/.dtbo.img.cmd
+      - name: rm3
+        run: rm -rf ../out/arch/arm64/boot/.Image.cmd
+
+
+          
       - name: Compress
-        run: tar -czvf build.tar.gz ../out
+        run: tar -czvf build.tar.gz ../out/arch/arm64/boot
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build.tar.gz
